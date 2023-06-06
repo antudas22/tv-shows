@@ -1,4 +1,5 @@
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const ShowCard = ({show}) => {
@@ -16,7 +17,7 @@ const ShowCard = ({show}) => {
                 <p>Rating: {rating.average}</p>
             </div>
             <p>Premiered: {premiered}</p>
-            <Button variant="primary">View More</Button>
+            <Link to={`/showsummary/${name}`} className="btn btn-primary">View More</Link>
             </Card.Body>
             </Card>
         </div>

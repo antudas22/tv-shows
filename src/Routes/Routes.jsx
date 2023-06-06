@@ -13,7 +13,10 @@ export const router = createBrowserRouter([
                 element: <Home/>
             },
             {
-                path: '/showsummary',
+                path: '/showsummary/:name',
+                loader: async ({params}) => {
+                    return fetch(`https://api.tvmaze.com/search/shows?q=${params.name}`)
+                },
                 element: <ShowSummary/>
             }
         ]
